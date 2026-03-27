@@ -22,8 +22,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run Node starter
-        run: node src/index.js
+      - name: Environment check
+        run: npm run check
 
-      - name: Run Python starter
-        run: python3 app/main.py
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests
+        run: npm run test

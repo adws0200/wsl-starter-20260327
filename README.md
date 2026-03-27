@@ -1,68 +1,89 @@
 # wsl-starter-20260327
 
-WSL 开发起手模板（Node.js + Python 双栈）。
+WSL 长期开发模板（Node.js + Python 双栈，含测试、CI、容器化、Git Hooks）。
 
-## 已完成
-- GitHub SSH 打通
-- 仓库初始化并推送
-- Node.js / npm / pnpm 可用
-- Python3 / pip / venv 可用
+## 你现在拿到的能力
 
-## 目录结构
-
-- `src/index.js`：Node 示例入口
-- `app/main.py`：Python 示例入口
-- `scripts/bootstrap.sh`：本地自检脚本
+- Node / Python 双服务（都提供 `/health`）
+- Node + Python 单元测试
+- CI 自动校验（check + lint + test）
+- 本地初始化脚本
+- Dockerfile + docker-compose
+- 可选 pre-commit 质量门禁
 
 ## 快速开始
 
 ```bash
+npm run check
+npm run lint
+npm run test
+```
+
+## 运行服务
+
+```bash
 # Node
-npm run dev
+npm run serve
+# health: http://127.0.0.1:3000/health
 
 # Python
-npm run py
+npm run py:serve
+# health: http://127.0.0.1:8000/health
 ```
 
-## 可用脚本
+## 常用命令
 
 ```bash
-npm run dev      # 运行 Node 示例
-npm run serve    # 启动 Node HTTP 服务（/health）
-npm run py       # 运行 Python 示例
-npm run py:serve # 启动 Python HTTP 服务（/health）
-npm run check    # 同时检查 node/python 版本
-npm run bootstrap
-npm run init:node
-npm run init:python
+npm run dev          # Node 示例输出
+npm run py           # Python 示例输出
+npm run serve        # Node HTTP 服务
+npm run py:serve     # Python HTTP 服务
+npm run check        # 环境检查
+npm run lint         # 语法/基础静态检查
+npm run test         # 全量测试
+npm run init:node    # Node 初始化
+npm run init:python  # Python venv 初始化
+npm run hooks:install
 ```
 
-服务启动后可访问：
+## Makefile 快捷入口
 
 ```bash
-# Node server
-curl http://127.0.0.1:3000/health
-
-# Python server
-curl http://127.0.0.1:8000/health
+make check
+make lint
+make test
+make serve
+make py-serve
 ```
 
 ## 环境变量
-
-复制模板后按需修改：
 
 ```bash
 cp .env.example .env
 ```
 
-## Makefile（可选）
+## 容器运行
 
 ```bash
-make check
-make node
-make py
+docker compose up --build
 ```
 
-## CI
+- Node health: `http://127.0.0.1:3000/health`
+- Python health: `http://127.0.0.1:8000/health`
 
-已配置 GitHub Actions：推送/PR 时自动运行 Node + Python 示例。
+## Git Hooks（可选）
+
+安装后每次提交前自动跑 lint + test：
+
+```bash
+npm run hooks:install
+```
+
+## 目录结构
+
+- `src/`：Node 代码
+- `app/`：Python 代码
+- `tests/node/`：Node 测试
+- `tests/python/`：Python 测试
+- `scripts/`：自动化脚本
+- `.github/workflows/ci.yml`：CI 配置

@@ -1,16 +1,21 @@
 {
   "name": "wsl-starter-20260327",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "WSL starter repo with Node + Python skeleton",
+  "description": "WSL starter template with Node + Python services, tests, and CI",
   "scripts": {
     "dev": "node src/index.js",
     "serve": "node src/server.js",
     "py": "python3 app/main.py",
     "py:serve": "python3 app/server.py",
     "check": "node -v && python3 --version && pip3 --version && pnpm -v",
+    "lint": "node --check src/index.js && node --check src/server.js && python3 -m compileall -q app",
+    "test:node": "node --test tests/node/*.test.js",
+    "test:py": "python3 -m unittest discover -s tests/python -p 'test_*.py' -v",
+    "test": "npm run test:node && npm run test:py",
     "bootstrap": "bash scripts/bootstrap.sh",
     "init:python": "bash scripts/init_python.sh",
-    "init:node": "bash scripts/init_node.sh"
+    "init:node": "bash scripts/init_node.sh",
+    "hooks:install": "bash scripts/install_hooks.sh"
   }
 }

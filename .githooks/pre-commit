@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[pre-commit] lint"
+npm run lint >/dev/null
+
+echo "[pre-commit] test"
+npm run test >/dev/null
+
+echo "[pre-commit] passed"
