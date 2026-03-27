@@ -7,6 +7,8 @@
     "dev": "node src/index.js",
     "py": "python3 app/main.py",
     "check": "node -v && python3 --version && pip3 --version && pnpm -v",
-    "bootstrap": "bash scripts/bootstrap.sh"
+    "bootstrap": "bash scripts/bootstrap.sh",
+    "init:python": "bash scripts/init_python.sh",
+    "init:node": "bash scripts/init_node.sh"
   }
 }

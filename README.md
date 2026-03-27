@@ -31,6 +31,16 @@ npm run dev      # 运行 Node 示例
 npm run py       # 运行 Python 示例
 npm run check    # 同时检查 node/python 版本
 npm run bootstrap
+npm run init:node
+npm run init:python
+```
+
+## 环境变量
+
+复制模板后按需修改：
+
+```bash
+cp .env.example .env
 ```
 
 ## Makefile（可选）
