@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: check node serve py bootstrap init-node init-python
+.PHONY: check node serve py py-serve bootstrap init-node init-python
 
 check:
 	npm run check
@@ -13,6 +13,9 @@ serve:
 
 py:
 	npm run py
+
+py-serve:
+	npm run py:serve
 
 bootstrap:
 	bash scripts/bootstrap.sh

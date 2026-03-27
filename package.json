@@ -7,6 +7,7 @@
     "dev": "node src/index.js",
     "serve": "node src/server.js",
     "py": "python3 app/main.py",
+    "py:serve": "python3 app/server.py",
     "check": "node -v && python3 --version && pip3 --version && pnpm -v",
     "bootstrap": "bash scripts/bootstrap.sh",
     "init:python": "bash scripts/init_python.sh",

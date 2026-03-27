@@ -28,8 +28,9 @@ npm run py
 
 ```bash
 npm run dev      # 运行 Node 示例
-npm run serve    # 启动本地 HTTP 服务（/health）
+npm run serve    # 启动 Node HTTP 服务（/health）
 npm run py       # 运行 Python 示例
+npm run py:serve # 启动 Python HTTP 服务（/health）
 npm run check    # 同时检查 node/python 版本
 npm run bootstrap
 npm run init:node
@@ -39,7 +40,11 @@ npm run init:python
 服务启动后可访问：
 
 ```bash
+# Node server
 curl http://127.0.0.1:3000/health
+
+# Python server
+curl http://127.0.0.1:8000/health
 ```
 
 ## 环境变量
