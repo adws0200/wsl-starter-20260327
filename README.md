@@ -32,3 +32,15 @@ npm run py       # 运行 Python 示例
 npm run check    # 同时检查 node/python 版本
 npm run bootstrap
 ```
+
+## Makefile（可选）
+
+```bash
+make check
+make node
+make py
+```
+
+## CI
+
+已配置 GitHub Actions：推送/PR 时自动运行 Node + Python 示例。
