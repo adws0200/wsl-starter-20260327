@@ -1,0 +1,12 @@
+{
+  "name": "wsl-starter-20260327",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WSL starter repo with Node + Python skeleton",
+  "scripts": {
+    "dev": "node src/index.js",
+    "py": "python3 app/main.py",
+    "check": "node -v && python3 --version && pip3 --version && pnpm -v",
+    "bootstrap": "bash scripts/bootstrap.sh"
+  }
+}
