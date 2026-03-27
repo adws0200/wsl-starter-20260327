@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: check lint test node serve py py-serve bootstrap init-node init-python hooks
+.PHONY: check lint test smoke node serve py py-serve bootstrap init-node init-python hooks
 
 check:
 	npm run check
@@ -10,6 +10,9 @@ lint:
 
 test:
 	npm run test
+
+smoke:
+	npm run smoke
 
 node:
 	npm run dev

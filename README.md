@@ -17,6 +17,7 @@ WSL 长期开发模板（Node.js + Python 双栈，含测试、CI、容器化、
 npm run check
 npm run lint
 npm run test
+npm run smoke
 ```
 
 ## 运行服务
@@ -41,6 +42,7 @@ npm run py:serve     # Python HTTP 服务
 npm run check        # 环境检查
 npm run lint         # 语法/基础静态检查
 npm run test         # 全量测试
+npm run smoke        # 启动并验证 Node/Python /health
 npm run init:node    # Node 初始化
 npm run init:python  # Python venv 初始化
 npm run hooks:install
@@ -52,6 +54,7 @@ npm run hooks:install
 make check
 make lint
 make test
+make smoke
 make serve
 make py-serve
 ```

@@ -13,4 +13,7 @@ npm run lint >/dev/null
 echo "[run] test"
 npm run test >/dev/null
 
+echo "[run] smoke"
+npm run smoke >/dev/null
+
 echo "[ok] bootstrap checks passed"

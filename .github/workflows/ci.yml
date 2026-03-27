@@ -30,3 +30,6 @@ jobs:
 
       - name: Tests
         run: npm run test
+
+      - name: Smoke
+        run: npm run smoke
