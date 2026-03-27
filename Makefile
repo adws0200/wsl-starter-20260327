@@ -1,12 +1,15 @@
 SHELL := /bin/bash
 
-.PHONY: check node py bootstrap init-node init-python
+.PHONY: check node serve py bootstrap init-node init-python
 
 check:
 	npm run check
 
 node:
 	npm run dev
+
+serve:
+	npm run serve
 
 py:
 	npm run py
